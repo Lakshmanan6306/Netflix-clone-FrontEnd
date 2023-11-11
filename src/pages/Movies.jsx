@@ -19,7 +19,7 @@ function Movies() {
     const movies = useSelector((state)=>state.netflix.movies);
     const genres = useSelector((state)=>state.netflix.genres);
     const dispatch = useDispatch();
-  
+    console.log(movies)
    useEffect(() => {
       dispatch(getGenres());
     }, [dispatch]);

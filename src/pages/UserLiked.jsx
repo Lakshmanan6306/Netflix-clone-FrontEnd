@@ -14,7 +14,7 @@ function UserLiked() {
     const navigate = useNavigate();
 
     const movies = useSelector((state)=>state.netflix.movies);
-    
+    console.log(movies)
     const dispatch = useDispatch();
   
     const [email, setEmail] = useState(undefined);
@@ -44,7 +44,7 @@ function UserLiked() {
       <div className="content flex column">
         <h1>My List</h1>
         <div className="grid flex">
-          {movies.map((movie, index) => {
+          {movies ? (movies.map((movie, index) => {
             return (
               <Card
                 movieData={movie}
@@ -53,7 +53,7 @@ function UserLiked() {
                 isliked={true}
               />
             );
-          })}
+          })) : <h3>No movies in your visitlist</h3>}
         </div>
       </div>
     </Container>
